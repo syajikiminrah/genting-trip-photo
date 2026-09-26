@@ -1,0 +1,4078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7dce5">
+
+<title>Our September ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --pink:#efb7c8;
+    --pink-2:#f8d8e2;
+    --pink-3:#fff0f4;
+    --deep-pink:#bd6e89;
+    --dark-pink:#96546c;
+    --cream:#fffaf3;
+    --paper:#fffdf9;
+    --beige:#f1e4da;
+    --white:#ffffff;
+    --text:#654f57;
+    --muted:#9d7b87;
+    --border:#e8b8c8;
+    --shadow:rgba(104,65,79,.18);
+
+    --sans:"DM Sans",sans-serif;
+    --hand:"Caveat",cursive;
+    --serif:"Playfair Display",serif;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+    font-family:var(--sans);
+    color:var(--text);
+    background:#f8e8ed;
+    -webkit-tap-highlight-color:transparent;
+}
+
+/* =========================================================
+   BOOT SCREEN
+========================================================= */
+
+.boot{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,255,255,.85),transparent 25%),
+        radial-gradient(circle at 80% 80%,rgba(255,255,255,.55),transparent 28%),
+        linear-gradient(135deg,#fcecf1,#f5d2dd,#fff8f1);
+
+    transition:opacity .7s ease,visibility .7s ease;
+}
+
+.boot.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.boot-card{
+    width:min(430px,92vw);
+    padding:38px 30px;
+
+    border:2px solid white;
+    border-radius:22px;
+
+    background:rgba(255,255,255,.64);
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 25px 60px rgba(116,72,87,.17),
+        inset 0 0 0 1px rgba(221,150,174,.25);
+
+    text-align:center;
+}
+
+.boot-logo{
+    width:82px;
+    height:82px;
+    margin:0 auto 18px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:24px;
+
+    background:linear-gradient(145deg,#fff,#f6cddd);
+    border:1px solid #edb6c9;
+
+    box-shadow:
+        inset 3px 3px 0 rgba(255,255,255,.8),
+        0 9px 20px rgba(143,83,104,.16);
+
+    font-size:2.3rem;
+}
+
+.boot h1{
+    font-family:var(--serif);
+    color:var(--dark-pink);
+    font-size:2rem;
+}
+
+.boot-sub{
+    margin-top:8px;
+    color:var(--muted);
+    font-size:.8rem;
+    letter-spacing:.08em;
+}
+
+.loading-box{
+    width:100%;
+    height:14px;
+
+    margin:28px 0 12px;
+
+    padding:2px;
+
+    border:1px solid var(--deep-pink);
+    border-radius:4px;
+
+    background:white;
+}
+
+.loading-bar{
+    height:100%;
+    width:0;
+
+    border-radius:2px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--deep-pink) 0 10px,
+            #db8ea8 10px 13px
+        );
+
+    animation:load 2s ease forwards;
+}
+
+@keyframes load{
+    to{width:100%;}
+}
+
+.boot-status{
+    min-height:20px;
+    font-family:var(--hand);
+    font-size:1.15rem;
+    color:var(--dark-pink);
+}
+
+.enter-btn{
+    display:none;
+
+    margin:18px auto 0;
+    padding:11px 22px;
+
+    border:1px solid var(--deep-pink);
+    border-radius:8px;
+
+    background:linear-gradient(#fff,#f8dce5);
+
+    color:var(--dark-pink);
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:3px 3px 0 #d995ac;
+}
+
+.enter-btn.show{
+    display:block;
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+.desktop{
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 20% 15%,rgba(255,255,255,.82),transparent 22%),
+        radial-gradient(circle at 80% 30%,rgba(255,255,255,.42),transparent 24%),
+        linear-gradient(rgba(255,255,255,.12),rgba(255,255,255,.12)),
+        linear-gradient(145deg,#f8dce5,#f5e4dc 50%,#f4cad8);
+
+    user-select:none;
+}
+
+.desktop::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    opacity:.28;
+
+    background-image:
+        radial-gradient(#fff 1.2px,transparent 1.2px);
+
+    background-size:24px 24px;
+}
+
+.wallpaper-title{
+    position:absolute;
+    right:6vw;
+    top:9vh;
+
+    text-align:right;
+
+    color:rgba(142,76,99,.45);
+}
+
+.wallpaper-title .big{
+    font-family:var(--serif);
+    font-size:clamp(2.4rem,6vw,6rem);
+    line-height:.9;
+}
+
+.wallpaper-title .small{
+    margin-top:12px;
+    font-family:var(--hand);
+    font-size:clamp(1.2rem,2.2vw,2rem);
+}
+
+/* =========================================================
+   DESKTOP ICONS
+========================================================= */
+
+.desktop-icons{
+    position:absolute;
+    z-index:10;
+
+    top:30px;
+    left:25px;
+
+    display:grid;
+    grid-template-columns:repeat(2,100px);
+
+    gap:24px 18px;
+}
+
+.desktop-icon{
+    width:100px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    gap:7px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    color:var(--text);
+
+    border:0;
+    background:none;
+}
+
+.desktop-icon .icon{
+    width:68px;
+    height:58px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(196,111,140,.5);
+    border-radius:10px;
+
+    background:linear-gradient(145deg,#fff,#f7d7e2);
+
+    box-shadow:
+        inset 2px 2px 0 white,
+        4px 5px 0 rgba(189,110,137,.16);
+
+    font-size:1.9rem;
+
+    transition:.15s ease;
+}
+
+.desktop-icon:hover .icon{
+    transform:translateY(-3px);
+}
+
+.desktop-icon span:last-child{
+    padding:2px 5px;
+
+    border-radius:4px;
+
+    font-size:.72rem;
+    line-height:1.15;
+
+    text-shadow:0 1px white;
+}
+
+/* =========================================================
+   TASKBAR
+========================================================= */
+
+.taskbar{
+    position:absolute;
+    z-index:9000;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:48px;
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    padding:5px 8px;
+
+    border-top:1px solid rgba(176,99,125,.3);
+
+    background:rgba(255,247,249,.91);
+    backdrop-filter:blur(16px);
+
+    box-shadow:0 -5px 18px rgba(93,53,66,.08);
+}
+
+.start-button{
+    height:36px;
+
+    padding:0 15px;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    border:1px solid #d89ab0;
+    border-radius:7px;
+
+    background:linear-gradient(#fff,#f4cfdb);
+
+    color:var(--dark-pink);
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        inset 1px 1px white,
+        2px 2px 0 rgba(182,103,130,.2);
+}
+
+.task-divider{
+    width:1px;
+    height:28px;
+    background:#e5c2ce;
+}
+
+.task-items{
+    flex:1;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.task-items::-webkit-scrollbar{
+    display:none;
+}
+
+.task-item{
+    max-width:150px;
+    height:34px;
+
+    padding:0 12px;
+
+    border:1px solid #e0afbf;
+    border-radius:6px;
+
+    background:#fff8fa;
+
+    color:var(--text);
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    font-size:.72rem;
+
+    cursor:pointer;
+}
+
+.task-item.active{
+    background:#f2c6d5;
+}
+
+.clock{
+    flex-shrink:0;
+
+    min-width:88px;
+
+    text-align:center;
+
+    font-size:.67rem;
+    line-height:1.25;
+
+    color:#865e6c;
+}
+
+/* =========================================================
+   START MENU
+========================================================= */
+
+.start-menu{
+    position:absolute;
+    z-index:9500;
+
+    left:8px;
+    bottom:53px;
+
+    width:300px;
+
+    display:none;
+
+    overflow:hidden;
+
+    border:1px solid #d69ab0;
+    border-radius:13px;
+
+    background:#fffafc;
+
+    box-shadow:0 18px 45px rgba(83,48,61,.22);
+}
+
+.start-menu.show{
+    display:block;
+}
+
+.start-head{
+    padding:17px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    background:linear-gradient(135deg,#e7a9bd,#f3cad7);
+
+    color:white;
+}
+
+.avatar{
+    width:48px;
+    height:48px;
+
+    display:grid;
+    place-items:center;
+
+    border:2px solid white;
+    border-radius:11px;
+
+    background:#fff5f8;
+
+    color:var(--dark-pink);
+
+    font-size:1.5rem;
+}
+
+.start-head b{
+    display:block;
+    font-family:var(--serif);
+}
+
+.start-head small{
+    opacity:.85;
+}
+
+.start-apps{
+    padding:9px;
+}
+
+.start-app{
+    width:100%;
+
+    padding:10px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    border:0;
+    border-radius:8px;
+
+    background:transparent;
+
+    color:var(--text);
+    text-align:left;
+
+    cursor:pointer;
+}
+
+.start-app:hover{
+    background:#fbe7ee;
+}
+
+.start-app .mini{
+    width:33px;
+    height:33px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:7px;
+
+    background:#f4cfdb;
+}
+
+/* =========================================================
+   WINDOWS
+========================================================= */
+
+.window{
+    position:absolute;
+
+    z-index:100;
+
+    width:min(720px,70vw);
+    height:min(590px,72vh);
+
+    min-width:340px;
+    min-height:300px;
+
+    display:none;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    border:1px solid #c9839d;
+    border-radius:10px;
+
+    background:var(--cream);
+
+    box-shadow:
+        10px 16px 35px rgba(82,48,60,.23),
+        inset 0 0 0 1px white;
+
+    user-select:text;
+}
+
+.window.open{
+    display:flex;
+}
+
+.window.focused{
+    z-index:5000;
+}
+
+.titlebar{
+    flex-shrink:0;
+
+    height:39px;
+
+    display:flex;
+    align-items:center;
+
+    padding-left:12px;
+
+    border-bottom:1px solid #d79ab0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d989a5,
+            #edb7c9
+        );
+
+    color:white;
+
+    cursor:grab;
+
+    user-select:none;
+}
+
+.titlebar:active{
+    cursor:grabbing;
+}
+
+.window-title{
+    flex:1;
+
+    font-size:.76rem;
+    font-weight:700;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.window-controls{
+    height:100%;
+
+    display:flex;
+}
+
+.win-btn{
+    width:39px;
+
+    display:grid;
+    place-items:center;
+
+    border:0;
+    border-left:1px solid rgba(255,255,255,.3);
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.win-btn:hover{
+    background:rgba(255,255,255,.25);
+}
+
+.win-btn.close:hover{
+    background:#c86b87;
+}
+
+.toolbar{
+    flex-shrink:0;
+
+    min-height:38px;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:6px 10px;
+
+    border-bottom:1px solid #edd5dd;
+
+    background:#fff9fb;
+}
+
+.toolbar-btn{
+    padding:5px 10px;
+
+    border:1px solid #e0b4c3;
+    border-radius:5px;
+
+    background:linear-gradient(#fff,#fae8ee);
+
+    color:#875a69;
+
+    font-size:.67rem;
+}
+
+.address{
+    flex:1;
+
+    min-width:0;
+
+    padding:5px 9px;
+
+    border:1px solid #e2bbc8;
+    border-radius:5px;
+
+    background:white;
+
+    color:#99717e;
+
+    font-size:.65rem;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.window-content{
+    flex:1;
+
+    overflow:auto;
+
+    padding:20px;
+
+    background:
+        radial-gradient(#efdce2 .65px,transparent .7px),
+        linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),
+        var(--cream);
+
+    background-size:9px 9px,auto,auto;
+
+    scrollbar-color:#dca4b8 transparent;
+    scrollbar-width:thin;
+}
+
+.statusbar{
+    flex-shrink:0;
+
+    height:25px;
+
+    padding:5px 9px;
+
+    border-top:1px solid #ecd2db;
+
+    background:#fff8fa;
+
+    color:#a07b87;
+
+    font-size:.6rem;
+}
+
+/* =========================================================
+   FILE EXPLORER
+========================================================= */
+
+.folder-title{
+    margin-bottom:4px;
+
+    font-family:var(--serif);
+    font-size:1.8rem;
+
+    color:var(--dark-pink);
+}
+
+.folder-sub{
+    margin-bottom:22px;
+
+    font-family:var(--hand);
+    font-size:1.3rem;
+
+    color:var(--deep-pink);
+}
+
+.file-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(115px,1fr));
+
+    gap:18px;
+}
+
+.file{
+    padding:10px 6px;
+
+    border:1px solid transparent;
+    border-radius:8px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.15s;
+}
+
+.file:hover{
+    border-color:#edc3d1;
+    background:#fff1f5;
+}
+
+.file-icon{
+    height:72px;
+
+    display:grid;
+    place-items:center;
+
+    font-size:2.8rem;
+}
+
+.file-name{
+    font-size:.7rem;
+    line-height:1.3;
+
+    word-break:break-word;
+}
+
+/* =========================================================
+   PHOTO GALLERY
+========================================================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:12px;
+}
+
+.photo-card{
+    padding:7px 7px 11px;
+
+    background:white;
+
+    border:1px solid #edd6dd;
+
+    box-shadow:3px 4px 0 rgba(206,145,165,.15);
+
+    cursor:pointer;
+}
+
+.photo-card:nth-child(odd){
+    transform:rotate(-1deg);
+}
+
+.photo-card:nth-child(even){
+    transform:rotate(1deg);
+}
+
+.photo{
+    width:100%;
+    aspect-ratio:1;
+
+    overflow:hidden;
+
+    display:grid;
+    place-items:center;
+
+    padding:10px;
+
+    background:
+        linear-gradient(135deg,#f8dce5,#fff0f4);
+
+    color:#b26b83;
+
+    text-align:center;
+
+    font-family:var(--hand);
+    font-size:1.05rem;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.caption{
+    margin-top:7px;
+
+    text-align:center;
+
+    font-family:var(--hand);
+    font-size:1rem;
+
+    color:#865a69;
+}
+
+/* =========================================================
+   GENTING
+========================================================= */
+
+.hero-photo{
+    position:relative;
+
+    width:min(470px,100%);
+
+    margin:20px auto 28px;
+
+    padding:10px 10px 17px;
+
+    background:white;
+
+    box-shadow:7px 8px 0 #edc9d5;
+}
+
+.hero-photo .photo{
+    aspect-ratio:4/3;
+}
+
+.tape{
+    position:absolute;
+
+    z-index:2;
+
+    top:-10px;
+    left:50%;
+
+    width:90px;
+    height:22px;
+
+    transform:translateX(-50%) rotate(-3deg);
+
+    background:rgba(236,164,188,.65);
+}
+
+.people{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.person{
+    padding:12px 7px;
+
+    border:1px solid #edd0da;
+    border-radius:9px;
+
+    background:white;
+
+    text-align:center;
+}
+
+.person-icon{
+    font-size:1.7rem;
+}
+
+.person-name{
+    margin-top:4px;
+
+    font-family:var(--hand);
+    font-size:1.25rem;
+
+    color:var(--dark-pink);
+}
+
+/* =========================================================
+   MOVIE TICKET
+========================================================= */
+
+.ticket{
+    position:relative;
+
+    max-width:530px;
+
+    margin:20px auto;
+
+    padding:22px;
+
+    overflow:hidden;
+
+    border:1px dashed #bb718b;
+    border-radius:9px;
+
+    background:
+        linear-gradient(135deg,#fff,#fae8ee);
+
+    box-shadow:5px 6px 0 #ebc6d2;
+}
+
+.ticket::before,
+.ticket::after{
+    content:"";
+
+    position:absolute;
+    top:50%;
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:var(--cream);
+}
+
+.ticket::before{
+    left:-13px;
+}
+
+.ticket::after{
+    right:-13px;
+}
+
+.ticket-top{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+    font-size:.65rem;
+    letter-spacing:.15em;
+
+    color:#9d6c7d;
+}
+
+.ticket h3{
+    font-family:var(--serif);
+    font-size:2rem;
+
+    color:var(--dark-pink);
+}
+
+.ticket-info{
+    margin-top:15px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    font-size:.73rem;
+}
+
+.barcode{
+    height:45px;
+    margin-top:20px;
+
+    opacity:.5;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #674f58 0 2px,
+            transparent 2px 5px,
+            #674f58 5px 6px,
+            transparent 6px 10px
+        );
+}
+
+/* =========================================================
+   NOTES
+========================================================= */
+
+.note{
+    padding:18px;
+
+    border:1px solid #efcfaf;
+
+    background:#fff3c8;
+
+    box-shadow:5px 6px 0 rgba(197,152,101,.14);
+
+    font-family:var(--hand);
+    font-size:1.25rem;
+    line-height:1.4;
+}
+
+.note.pink{
+    border-color:#eab5c7;
+    background:#fde3eb;
+}
+
+.note + .note{
+    margin-top:15px;
+}
+
+/* =========================================================
+   DANU BIRTHDAY
+========================================================= */
+
+.birthday-banner{
+    padding:28px 20px;
+
+    border:1px solid #edbfd0;
+    border-radius:12px;
+
+    background:
+        radial-gradient(circle at 20% 30%,white 0 2px,transparent 3px),
+        radial-gradient(circle at 80% 40%,white 0 2px,transparent 3px),
+        linear-gradient(135deg,#f5c6d6,#fff0f4);
+
+    text-align:center;
+}
+
+.birthday-banner h2{
+    font-family:var(--serif);
+    font-size:clamp(2rem,5vw,3.4rem);
+
+    color:var(--dark-pink);
+}
+
+.birthday-banner p{
+    margin-top:8px;
+
+    font-family:var(--hand);
+    font-size:1.4rem;
+
+    color:#b26982;
+}
+
+/* =========================================================
+   ASLYNE REVEAL
+========================================================= */
+
+.reveal{
+    min-height:380px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.mystery{
+    width:160px;
+    height:160px;
+
+    margin:22px auto;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid #e6b3c4;
+    border-radius:14px;
+
+    background:
+        linear-gradient(135deg,#f7cfdd,#fff);
+
+    box-shadow:7px 8px 0 #edc4d2;
+
+    font-size:4rem;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.mystery.revealed{
+    transform:rotate(-3deg) scale(1.05);
+}
+
+.reveal-name{
+    display:none;
+
+    font-family:var(--serif);
+    font-size:2rem;
+
+    color:var(--dark-pink);
+}
+
+.reveal-name.show{
+    display:block;
+}
+
+/* =========================================================
+   FOOD
+========================================================= */
+
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:13px;
+}
+
+.food-card{
+    overflow:hidden;
+
+    border:1px solid #ecd0da;
+    border-radius:10px;
+
+    background:white;
+}
+
+.food-card .photo{
+    aspect-ratio:4/3;
+}
+
+.food-info{
+    padding:11px;
+
+    font-size:.72rem;
+    line-height:1.5;
+}
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter{
+    min-height:400px;
+
+    padding:30px 28px 30px 48px;
+
+    background:
+        repeating-linear-gradient(
+            transparent,
+            transparent 29px,
+            rgba(194,156,167,.22) 30px
+        ),
+        #fffdf8;
+
+    border:1px solid #ead9d2;
+
+    box-shadow:5px 7px 0 rgba(193,145,160,.12);
+
+    font-family:var(--hand);
+    font-size:1.25rem;
+    line-height:1.45;
+}
+
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.player{
+    max-width:500px;
+
+    margin:auto;
+
+    padding:22px;
+
+    border:1px solid #e4b3c4;
+    border-radius:14px;
+
+    background:linear-gradient(145deg,#fff,#f9e1e9);
+
+    box-shadow:7px 8px 0 #e8becd;
+}
+
+.album{
+    width:160px;
+    height:160px;
+
+    margin:0 auto 18px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:9px;
+
+    background:
+        linear-gradient(145deg,#d987a3,#f5c5d5);
+
+    color:white;
+
+    font-size:3rem;
+}
+
+.now-playing{
+    text-align:center;
+}
+
+.now-playing h3{
+    font-family:var(--serif);
+    color:var(--dark-pink);
+}
+
+.progress{
+    height:6px;
+
+    margin:20px 0;
+
+    border-radius:99px;
+
+    background:#eccbd6;
+}
+
+.progress::before{
+    content:"";
+
+    display:block;
+
+    width:43%;
+    height:100%;
+
+    border-radius:99px;
+
+    background:var(--deep-pink);
+}
+
+.player-controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:22px;
+
+    font-size:1.4rem;
+}
+
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
+
+.viewer-image{
+    min-height:320px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f9e4eb;
+}
+
+.viewer-image img{
+    max-width:100%;
+    max-height:450px;
+    object-fit:contain;
+}
+
+.viewer-placeholder{
+    text-align:center;
+
+    font-family:var(--hand);
+    font-size:1.5rem;
+
+    color:#ae6c83;
+}
+
+.viewer-caption{
+    padding:18px;
+
+    text-align:center;
+
+    font-family:var(--hand);
+    font-size:1.3rem;
+}
+
+/* =========================================================
+   POPUPS
+========================================================= */
+
+.popup{
+    position:fixed;
+    z-index:20000;
+
+    left:50%;
+    top:50%;
+
+    width:min(360px,88vw);
+
+    transform:translate(-50%,-50%) scale(.92);
+
+    padding:6px;
+
+    border:1px solid #c77c97;
+    border-radius:10px;
+
+    background:#fff8fb;
+
+    box-shadow:0 25px 60px rgba(75,42,53,.28);
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.2s;
+}
+
+.popup.show{
+    opacity:1;
+    pointer-events:auto;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.popup-bar{
+    padding:8px 10px;
+
+    border-radius:6px 6px 0 0;
+
+    background:linear-gradient(90deg,#d987a3,#efb7c9);
+
+    color:white;
+    font-size:.72rem;
+    font-weight:700;
+}
+
+.popup-body{
+    padding:20px;
+
+    text-align:center;
+}
+
+.popup-body .emoji{
+    font-size:2.5rem;
+}
+
+.popup-body p{
+    margin:12px 0 17px;
+    line-height:1.5;
+    font-size:.8rem;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .wallpaper-title{
+        right:20px;
+        top:24px;
+    }
+
+    .wallpaper-title .big{
+        font-size:2.4rem;
+    }
+
+    .wallpaper-title .small{
+        font-size:1.2rem;
+    }
+
+    .desktop{
+        padding-bottom:
+            calc(64px + env(safe-area-inset-bottom));
+    }
+
+    .desktop-icons{
+        top:125px;
+        left:14px;
+        right:14px;
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
+        gap:24px 7px;
+    }
+
+    .desktop-icon{
+        width:100%;
+    }
+
+    .desktop-icon .icon{
+        width:58px;
+        height:52px;
+
+        font-size:1.6rem;
+    }
+
+    .desktop-icon span:last-child{
+        max-width:100%;
+
+        font-size:.65rem;
+
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+
+    .taskbar{
+        height:
+            calc(55px + env(safe-area-inset-bottom));
+
+        padding-bottom:
+            env(safe-area-inset-bottom);
+    }
+
+    .start-button{
+        width:44px;
+        padding:0;
+
+        justify-content:center;
+    }
+
+    .start-button .start-text{
+        display:none;
+    }
+
+    .clock{
+        min-width:64px;
+        font-size:.58rem;
+    }
+
+    .start-menu{
+        left:6px;
+        bottom:
+            calc(61px + env(safe-area-inset-bottom));
+
+        width:
+            calc(100vw - 12px);
+    }
+
+    .window{
+        position:fixed !important;
+
+        left:0 !important;
+        top:0 !important;
+
+        width:100vw !important;
+        height:
+            calc(100dvh - 55px - env(safe-area-inset-bottom)) !important;
+
+        min-width:0;
+        min-height:0;
+
+        border:0;
+        border-radius:0;
+
+        box-shadow:none;
+    }
+
+    .titlebar{
+        height:45px;
+        padding-left:12px;
+
+        cursor:default;
+    }
+
+    .window-controls .minimize,
+    .window-controls .maximize{
+        display:none;
+    }
+
+    .win-btn{
+        width:48px;
+    }
+
+    .toolbar{
+        min-height:42px;
+        padding:6px;
+    }
+
+    .toolbar-btn{
+        padding:6px 8px;
+        font-size:.6rem;
+    }
+
+    .address{
+        font-size:.58rem;
+    }
+
+    .window-content{
+        padding:16px;
+
+        overscroll-behavior:contain;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .statusbar{
+        height:24px;
+    }
+
+    .folder-title{
+        font-size:1.55rem;
+    }
+
+    .folder-sub{
+        font-size:1.15rem;
+    }
+
+    .file-grid{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
+        gap:14px 5px;
+    }
+
+    .file-icon{
+        height:60px;
+        font-size:2.25rem;
+    }
+
+    .file-name{
+        font-size:.62rem;
+    }
+
+    .gallery{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:10px;
+    }
+
+    .people{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .food-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ticket{
+        padding:18px;
+    }
+
+    .ticket h3{
+        font-size:1.6rem;
+    }
+
+    .ticket-info{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .letter{
+        padding:
+            25px
+            18px
+            25px
+            36px;
+
+        font-size:1.15rem;
+    }
+
+    .viewer-image{
+        min-height:50dvh;
+    }
+
+    .boot-card{
+        padding:30px 20px;
+    }
+}
+
+@media(max-width:370px){
+
+    .desktop-icons{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .file-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     BOOT SCREEN
+===================================================== -->
+
+<div class="boot" id="boot">
+
+    <div class="boot-card">
+
+        <div class="boot-logo">
+            💗
+        </div>
+
+        <h1>
+            September OS
+        </h1>
+
+        <div class="boot-sub">
+            MEMORY ARCHIVE · 2026
+        </div>
+
+        <div class="loading-box">
+            <div class="loading-bar"></div>
+        </div>
+
+        <div class="boot-status" id="bootStatus">
+            loading memories...
+        </div>
+
+        <button class="enter-btn"
+                id="enterBtn">
+            Enter Our Memories ♡
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     DESKTOP
+===================================================== -->
+
+<div class="desktop" id="desktop">
+
+    <div class="wallpaper-title">
+
+        <div class="big">
+            our<br>
+            september
+        </div>
+
+        <div class="small">
+            27 — 28.09.2026 ♡
+        </div>
+
+    </div>
+
+
+    <!-- DESKTOP ICONS -->
+
+    <div class="desktop-icons">
+
+        <button class="desktop-icon"
+                data-open="genting">
+
+            <div class="icon">📁</div>
+
+            <span>
+                GENTING
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="birthday">
+
+            <div class="icon">📁</div>
+
+            <span>
+                DANU_BDAY
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="camera">
+
+            <div class="icon">📷</div>
+
+            <span>
+                CAMERA_ROLL
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="food">
+
+            <div class="icon">🍰</div>
+
+            <span>
+                FOOD
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="letters">
+
+            <div class="icon">💌</div>
+
+            <span>
+                LETTERS
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="playlist">
+
+            <div class="icon">💿</div>
+
+            <span>
+                PLAYLIST
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="favorites">
+
+            <div class="icon">💗</div>
+
+            <span>
+                FAVORITES
+            </span>
+
+        </button>
+
+
+        <button class="desktop-icon"
+                data-open="about">
+
+            <div class="icon">📝</div>
+
+            <span>
+                README.txt
+            </span>
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         GENTING WINDOW
+    ================================================== -->
+
+    <div class="window"
+         id="genting"
+         style="left:19%;top:8%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                📁 GENTING — 27.09.2026
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">
+                    —
+                </button>
+
+                <button class="win-btn maximize">
+                    □
+                </button>
+
+                <button class="win-btn close">
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="toolbar">
+
+            <button class="toolbar-btn">
+                ← Back
+            </button>
+
+            <div class="address">
+                ♡:\Memories\September\Genting
+            </div>
+
+        </div>
+
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Our Genting Trip ♡
+            </h2>
+
+            <div class="folder-sub">
+                27 September 2026 · four of us
+            </div>
+
+
+            <div class="hero-photo">
+
+                <div class="tape"></div>
+
+                <div class="photo">
+                    GENTING GROUP PHOTO
+                </div>
+
+                <div class="caption">
+                    we actually made it here ♡
+                </div>
+
+            </div>
+
+
+            <div class="people">
+
+                <div class="person">
+                    <div class="person-icon">💙</div>
+                    <div class="person-name">
+                        Taksha
+                    </div>
+                </div>
+
+                <div class="person">
+                    <div class="person-icon">🎀</div>
+                    <div class="person-name">
+                        Danu
+                    </div>
+                </div>
+
+                <div class="person">
+                    <div class="person-icon">❤️</div>
+                    <div class="person-name">
+                        Sofia
+                    </div>
+                </div>
+
+                <div class="person">
+                    <div class="person-icon">💜</div>
+                    <div class="person-name">
+                        Yalini
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="note pink"
+                 style="margin-top:25px"
+                 contenteditable="true">
+
+                Four people, one Genting trip,
+                too many photos and probably
+                way too much chaos. ♡
+
+            </div>
+
+
+            <h3 class="folder-title"
+                style="font-size:1.25rem;margin-top:30px;">
+
+                Files in this folder
+            </h3>
+
+
+            <div class="file-grid">
+
+                <div class="file"
+                     data-open="gentingPhotos">
+
+                    <div class="file-icon">
+                        📁
+                    </div>
+
+                    <div class="file-name">
+                        PHOTOS
+                    </div>
+
+                </div>
+
+
+                <div class="file"
+                     data-open="gentingTimeline">
+
+                    <div class="file-icon">
+                        📝
+                    </div>
+
+                    <div class="file-name">
+                        timeline.txt
+                    </div>
+
+                </div>
+
+
+                <div class="file"
+                     data-open="food">
+
+                    <div class="file-icon">
+                        🍜
+                    </div>
+
+                    <div class="file-name">
+                        food.jpg
+                    </div>
+
+                </div>
+
+
+                <div class="file"
+                     onclick="showPopup('chaos')">
+
+                    <div class="file-icon">
+                        😂
+                    </div>
+
+                    <div class="file-name">
+                        chaos.exe
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            4 objects · 27 September 2026
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GENTING PHOTOS
+    ================================================== -->
+
+    <div class="window"
+         id="gentingPhotos"
+         style="left:25%;top:12%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                📷 GENTING\PHOTOS
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">
+                    —
+                </button>
+
+                <button class="win-btn maximize">
+                    □
+                </button>
+
+                <button class="win-btn close">
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+
+            <button class="toolbar-btn"
+                    data-open="genting">
+                ← Genting
+            </button>
+
+            <div class="address">
+                ♡:\GENTING\PHOTOS
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Genting Camera Roll ♡
+            </h2>
+
+            <div class="folder-sub">
+                blurry photos are still memories
+            </div>
+
+
+            <div class="gallery">
+
+                <div class="photo-card"
+                     data-photo="Genting photo 01"
+                     data-caption="we finally made it here ♡">
+
+                    <div class="photo">
+                        PHOTO 01
+                    </div>
+
+                    <div class="caption">
+                        IMG_0927.JPG
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card"
+                     data-photo="Genting photo 02"
+                     data-caption="the photo we took 50 times">
+
+                    <div class="photo">
+                        PHOTO 02
+                    </div>
+
+                    <div class="caption">
+                        IMG_0928.JPG
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card"
+                     data-photo="Genting photo 03"
+                     data-caption="why were we like this 😭">
+
+                    <div class="photo">
+                        PHOTO 03
+                    </div>
+
+                    <div class="caption">
+                        IMG_0929.JPG
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card"
+                     data-photo="Genting photo 04"
+                     data-caption="main character moment">
+
+                    <div class="photo">
+                        PHOTO 04
+                    </div>
+
+                    <div class="caption">
+                        IMG_0930.JPG
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card"
+                     data-photo="Genting photo 05"
+                     data-caption="never deleting this one">
+
+                    <div class="photo">
+                        PHOTO 05
+                    </div>
+
+                    <div class="caption">
+                        IMG_0931.JPG
+                    </div>
+
+                </div>
+
+
+                <div class="photo-card"
+                     data-photo="Genting photo 06"
+                     data-caption="♡">
+
+                    <div class="photo">
+                        PHOTO 06
+                    </div>
+
+                    <div class="caption">
+                        IMG_0932.JPG
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            6 image files
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TIMELINE
+    ================================================== -->
+
+    <div class="window"
+         id="gentingTimeline"
+         style="left:30%;top:15%;width:min(580px,70vw);">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                📝 timeline.txt — Notepad
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-btn">File</div>
+            <div class="toolbar-btn">Edit</div>
+            <div class="toolbar-btn">View</div>
+        </div>
+
+        <div class="window-content">
+
+            <div class="letter"
+                 contenteditable="true">
+
+                GENTING — 27.09.2026 ♡
+
+                <br><br>
+
+                🚗 Leaving for Genting<br>
+                Write what happened...
+
+                <br><br>
+
+                🏔 Arriving<br>
+                Write what happened...
+
+                <br><br>
+
+                🍜 Food break<br>
+                Write what we ate...
+
+                <br><br>
+
+                📸 Photo time<br>
+                Probably took way too many.
+
+                <br><br>
+
+                😂 Random chaos<br>
+                Write the funniest thing here...
+
+                <br><br>
+
+                🌙 Going home<br>
+                One day, four people,
+                so many memories. ♡
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            UTF-8 · editable memory file
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DANU BIRTHDAY
+    ================================================== -->
+
+    <div class="window"
+         id="birthday"
+         style="left:23%;top:9%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                🎀 DANU_BDAY — 28.09.2026
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="toolbar">
+
+            <button class="toolbar-btn">
+                ← Back
+            </button>
+
+            <div class="address">
+                ♡:\Memories\September\Danu_Birthday
+            </div>
+
+        </div>
+
+
+        <div class="window-content">
+
+            <div class="birthday-banner">
+
+                <div style="font-size:2.6rem">
+                    🎂
+                </div>
+
+                <h2>
+                    Happy Birthday Danu ♡
+                </h2>
+
+                <p>
+                    28 September 2026
+                </p>
+
+            </div>
+
+
+            <div class="file-grid"
+                 style="margin-top:28px;">
+
+                <div class="file"
+                     data-open="avengers">
+
+                    <div class="file-icon">
+                        🎬
+                    </div>
+
+                    <div class="file-name">
+                        AVENGERS
+                    </div>
+
+                </div>
+
+
+                <div class="file"
+                     data-open="cafe">
+
+                    <div class="file-icon">
+                        ☕
+                    </div>
+
+                    <div class="file-name">
+                        CAFE_TIME
+                    </div>
+
+                </div>
+
+
+                <div class="file"
+                     data-open="gifts">
+
+                    <div class="file-icon">
+                        🎁
+                    </div>
+
+                    <div class="file-name">
+                        GIFTS
+                    </div>
+
+                </div>
+
+
+                <div class="file"
+                     data-open="birthdayPhotos">
+
+                    <div class="file-icon">
+                        📷
+                    </div>
+
+                    <div class="file-name">
+                        PHOTOS
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="note pink"
+                 style="margin-top:30px;"
+                 contenteditable="true">
+
+                Avengers first.
+                Café later.
+                Then somehow the day became
+                another memory worth keeping. ♡
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            Danu's Birthday · 4 folders
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         AVENGERS
+    ================================================== -->
+
+    <div class="window"
+         id="avengers"
+         style="left:27%;top:12%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                🎬 AVENGERS.mp4
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Avengers Movie Day 🎬
+            </h2>
+
+            <div class="folder-sub">
+                Danu · Taksha · Sofia
+            </div>
+
+
+            <div class="ticket">
+
+                <div class="ticket-top">
+                    <span>SEPTEMBER CINEMA</span>
+                    <span>28.09.2026</span>
+                </div>
+
+                <h3>
+                    AVENGERS
+                </h3>
+
+                <div class="ticket-info">
+
+                    <div>
+                        <b>Guests</b><br>
+                        Danu<br>
+                        Taksha<br>
+                        Sofia
+                    </div>
+
+                    <div>
+                        <b>Time</b><br>
+                        <span contenteditable="true">
+                            Add time
+                        </span>
+                    </div>
+
+                    <div>
+                        <b>Cinema</b><br>
+                        <span contenteditable="true">
+                            Add cinema
+                        </span>
+                    </div>
+
+                    <div>
+                        <b>Snacks</b><br>
+                        <span contenteditable="true">
+                            Add snacks
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="barcode"></div>
+
+            </div>
+
+
+            <div class="gallery">
+
+                <div class="photo-card">
+                    <div class="photo">
+                        CINEMA SELFIE
+                    </div>
+                    <div class="caption">
+                        before the movie ♡
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo">
+                        SNACKS
+                    </div>
+                    <div class="caption">
+                        priorities 😭
+                    </div>
+                </div>
+
+                <div class="photo-card">
+                    <div class="photo">
+                        MOVIE PHOTO
+                    </div>
+                    <div class="caption">
+                        28.09.26
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            Danu · Taksha · Sofia
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         CAFE
+    ================================================== -->
+
+    <div class="window"
+         id="cafe"
+         style="left:20%;top:10%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                ☕ CAFE_TIME
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+
+            <button class="toolbar-btn">
+                ☕ Café
+            </button>
+
+            <div class="address">
+                ♡:\DANU_BDAY\CAFE_TIME
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Birthday Café Time ♡
+            </h2>
+
+            <div class="folder-sub">
+                later that day...
+            </div>
+
+
+            <div class="people">
+
+                <div class="person">
+                    <div class="person-icon">🎀</div>
+                    <div class="person-name">Danu</div>
+                </div>
+
+                <div class="person">
+                    <div class="person-icon">💙</div>
+                    <div class="person-name">Taksha</div>
+                </div>
+
+                <div class="person">
+                    <div class="person-icon">❤️</div>
+                    <div class="person-name">Sofia</div>
+                </div>
+
+            </div>
+
+
+            <div class="note"
+                 style="margin-top:25px;">
+
+                Café:
+                <span contenteditable="true">
+                    add café name...
+                </span>
+
+                <br>
+
+                Time:
+                <span contenteditable="true">
+                    add time...
+                </span>
+
+            </div>
+
+
+            <div class="file"
+                 data-open="aslyne"
+                 style="
+                    width:170px;
+                    margin:30px auto 0;
+                    border:1px dashed #db9eb3;
+                    background:#fff5f8;
+                 ">
+
+                <div class="file-icon">
+                    ❔
+                </div>
+
+                <div class="file-name">
+                    UNKNOWN_USER.exe
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            3 people detected... wait?
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ASLYNE REVEAL
+    ================================================== -->
+
+    <div class="window"
+         id="aslyne"
+         style="left:32%;top:17%;width:min(500px,70vw);">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                ❔ UNKNOWN_USER.exe
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <div class="reveal">
+
+                <div class="folder-sub">
+                    somebody joined us...
+                </div>
+
+                <h2 class="folder-title">
+                    New Memory Detected ♡
+                </h2>
+
+                <div class="mystery"
+                     id="mystery"
+                     onclick="revealAslyne()">
+
+                    ❔
+
+                </div>
+
+                <div class="reveal-name"
+                     id="revealName">
+
+                    ASLYNE ♡
+
+                    <div style="
+                        font-family:var(--hand);
+                        font-size:1.25rem;
+                        font-weight:400;
+                        margin-top:8px;
+                    ">
+                        and then there were four.
+                    </div>
+
+                </div>
+
+                <small style="margin-top:15px">
+                    tap the mystery file
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            hidden file
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GIFTS
+    ================================================== -->
+
+    <div class="window"
+         id="gifts"
+         style="left:28%;top:14%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                🎁 DANU_BDAY\GIFTS
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Danu's Gifts ♡
+            </h2>
+
+            <div class="folder-sub">
+                click the files to inspect
+            </div>
+
+            <div class="file-grid">
+
+                <div class="file"
+                     onclick="giftPopup(1)">
+                    <div class="file-icon">🎁</div>
+                    <div class="file-name">gift_01.zip</div>
+                </div>
+
+                <div class="file"
+                     onclick="giftPopup(2)">
+                    <div class="file-icon">💝</div>
+                    <div class="file-name">gift_02.zip</div>
+                </div>
+
+                <div class="file"
+                     onclick="giftPopup(3)">
+                    <div class="file-icon">🎀</div>
+                    <div class="file-name">gift_03.zip</div>
+                </div>
+
+                <div class="file"
+                     onclick="giftPopup(4)">
+                    <div class="file-icon">🎁</div>
+                    <div class="file-name">gift_04.zip</div>
+                </div>
+
+            </div>
+
+            <div class="note pink"
+                 style="margin-top:30px;"
+                 contenteditable="true">
+
+                Favourite reaction:
+                write it here... ♡
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            4 compressed birthday surprises
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         BIRTHDAY PHOTOS
+    ================================================== -->
+
+    <div class="window"
+         id="birthdayPhotos"
+         style="left:22%;top:10%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                📷 DANU_BDAY\PHOTOS
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Birthday Camera Roll ♡
+            </h2>
+
+            <div class="gallery">
+
+                <div class="photo-card"
+                     data-photo="Birthday photo 01"
+                     data-caption="birthday girl ♡">
+                    <div class="photo">DANU</div>
+                    <div class="caption">birthday girl 🎀</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Birthday photo 02"
+                     data-caption="movie day">
+                    <div class="photo">MOVIE</div>
+                    <div class="caption">Avengers 🎬</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Birthday photo 03"
+                     data-caption="café time">
+                    <div class="photo">CAFÉ</div>
+                    <div class="caption">☕ ♡</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Birthday photo 04"
+                     data-caption="the four of us">
+                    <div class="photo">GROUP</div>
+                    <div class="caption">the four of us</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Birthday photo 05"
+                     data-caption="food">
+                    <div class="photo">FOOD</div>
+                    <div class="caption">camera ate first</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Birthday photo 06"
+                     data-caption="forever">
+                    <div class="photo">FAVOURITE</div>
+                    <div class="caption">never deleting ♡</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            Birthday archive · 28 September 2026
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         CAMERA ROLL
+    ================================================== -->
+
+    <div class="window"
+         id="camera"
+         style="left:18%;top:8%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                📷 CAMERA_ROLL
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+
+            <button class="toolbar-btn">
+                Gallery
+            </button>
+
+            <div class="address">
+                ♡:\CAMERA_ROLL\SEPTEMBER
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                September Camera Roll ♡
+            </h2>
+
+            <div class="folder-sub">
+                27 — 28 September 2026
+            </div>
+
+            <div class="file-grid">
+
+                <div class="file"
+                     data-open="gentingPhotos">
+                    <div class="file-icon">🏔️</div>
+                    <div class="file-name">GENTING</div>
+                </div>
+
+                <div class="file"
+                     data-open="birthdayPhotos">
+                    <div class="file-icon">🎂</div>
+                    <div class="file-name">DANU_BDAY</div>
+                </div>
+
+                <div class="file"
+                     data-open="favorites">
+                    <div class="file-icon">💗</div>
+                    <div class="file-name">FAVORITES</div>
+                </div>
+
+                <div class="file"
+                     onclick="showPopup('blurry')">
+                    <div class="file-icon">😭</div>
+                    <div class="file-name">BLURRY_BUT_IMPORTANT</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            September photo archive
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FOOD
+    ================================================== -->
+
+    <div class="window"
+         id="food"
+         style="left:24%;top:10%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                🍰 FOOD_ARCHIVE
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Camera Ate First ♡
+            </h2>
+
+            <div class="folder-sub">
+                the extremely important food archive
+            </div>
+
+
+            <div class="food-grid">
+
+                <div class="food-card">
+                    <div class="photo">GENTING FOOD</div>
+                    <div class="food-info">
+                        <b>Genting meal</b><br>
+                        <span contenteditable="true">
+                            Add food name...
+                        </span>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="photo">SNACKS</div>
+                    <div class="food-info">
+                        <b>Snacks</b><br>
+                        <span contenteditable="true">
+                            Add details...
+                        </span>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="photo">CAFÉ FOOD</div>
+                    <div class="food-info">
+                        <b>Birthday café</b><br>
+                        <span contenteditable="true">
+                            Add food...
+                        </span>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="photo">DESSERT</div>
+                    <div class="food-info">
+                        <b>Dessert</b><br>
+                        <span contenteditable="true">
+                            Add dessert...
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            calories.exe has stopped responding
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         LETTERS
+    ================================================== -->
+
+    <div class="window"
+         id="letters"
+         style="left:28%;top:11%;width:min(600px,70vw);">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                💌 future_us.txt — Notepad
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-btn">File</div>
+            <div class="toolbar-btn">Edit</div>
+            <div class="toolbar-btn">Format</div>
+            <div class="toolbar-btn">Help</div>
+        </div>
+
+        <div class="window-content">
+
+            <div class="letter"
+                 contenteditable="true">
+
+                Dear future us,
+
+                <br><br>
+
+                If you're reading this years later,
+                I hope you still remember these
+                two little September days.
+
+                <br><br>
+
+                Genting with Taksha, Danu,
+                Sofia and Yalini.
+
+                <br><br>
+
+                Avengers with Danu,
+                Taksha and Sofia.
+
+                <br><br>
+
+                And later,
+                café time with Aslyne joining us.
+
+                <br><br>
+
+                I hope we remember the food,
+                the photos, the stupid jokes,
+                the birthday gifts,
+                and all the tiny things
+                that seemed ordinary at the time.
+
+                <br><br>
+
+                Maybe one day we'll open
+                this website again and realize
+                just how much has changed.
+
+                <br><br>
+
+                But for now—
+
+                <br><br>
+
+                keep this somewhere safe. ♡
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            future_us.txt · editable
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PLAYLIST
+    ================================================== -->
+
+    <div class="window"
+         id="playlist"
+         style="left:31%;top:14%;width:min(520px,70vw);">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                💿 September Media Player
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <div class="player">
+
+                <div class="album">
+                    💿
+                </div>
+
+                <div class="now-playing">
+
+                    <small>
+                        NOW PLAYING
+                    </small>
+
+                    <h3 contenteditable="true">
+                        Our September
+                    </h3>
+
+                    <p contenteditable="true">
+                        memory soundtrack ♡
+                    </p>
+
+                </div>
+
+                <div class="progress"></div>
+
+                <div class="player-controls">
+                    ⏮
+                    <span style="font-size:2rem">▶</span>
+                    ⏭
+                </div>
+
+            </div>
+
+
+            <div class="note pink"
+                 style="margin-top:25px;"
+                 contenteditable="true">
+
+                ♫ Song 01 — ______<br>
+                ♫ Song 02 — ______<br>
+                ♫ Song 03 — ______<br>
+                ♫ Song 04 — ______
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            September playlist ♡
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         FAVORITES
+    ================================================== -->
+
+    <div class="window"
+         id="favorites"
+         style="left:21%;top:10%;">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                💗 FAVORITES
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content">
+
+            <h2 class="folder-title">
+                Photos I Never Want to Delete ♡
+            </h2>
+
+            <div class="folder-sub">
+                starred memories
+            </div>
+
+            <div class="gallery">
+
+                <div class="photo-card"
+                     data-photo="Favourite Genting photo"
+                     data-caption="27.09.2026 ♡">
+                    <div class="photo">GENTING FAV</div>
+                    <div class="caption">★ 27.09</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Favourite group photo"
+                     data-caption="the four of us">
+                    <div class="photo">GROUP FAV</div>
+                    <div class="caption">★ us</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Favourite birthday photo"
+                     data-caption="Danu's day ♡">
+                    <div class="photo">BDAY FAV</div>
+                    <div class="caption">★ 28.09</div>
+                </div>
+
+                <div class="photo-card"
+                     data-photo="Favourite café photo"
+                     data-caption="café crew ♡">
+                    <div class="photo">CAFÉ FAV</div>
+                    <div class="caption">★ forever</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            4 starred files
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         README
+    ================================================== -->
+
+    <div class="window"
+         id="about"
+         style="left:30%;top:15%;width:min(560px,70vw);">
+
+        <div class="titlebar">
+
+            <div class="window-title">
+                📝 README.txt
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="toolbar">
+            <div class="toolbar-btn">File</div>
+            <div class="toolbar-btn">Edit</div>
+        </div>
+
+        <div class="window-content">
+
+            <div class="letter">
+
+                OUR SEPTEMBER ♡
+
+                <br><br>
+
+                ──────────────────
+
+                <br><br>
+
+                27.09.2026
+
+                <br>
+
+                GENTING TRIP
+
+                <br>
+
+                Taksha<br>
+                Danu<br>
+                Sofia<br>
+                Yalini
+
+                <br><br>
+
+                ──────────────────
+
+                <br><br>
+
+                28.09.2026
+
+                <br>
+
+                DANU'S BIRTHDAY ♡
+
+                <br><br>
+
+                Avengers:<br>
+                Danu · Taksha · Sofia
+
+                <br><br>
+
+                Café:<br>
+                Danu · Taksha · Sofia · Aslyne
+
+                <br><br>
+
+                ──────────────────
+
+                <br><br>
+
+                Two days saved
+                inside one tiny computer.
+
+                <br><br>
+
+                ♡
+
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            README.txt
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         PHOTO VIEWER
+    ================================================== -->
+
+    <div class="window"
+         id="photoViewer"
+         style="left:29%;top:12%;width:min(550px,70vw);">
+
+        <div class="titlebar">
+
+            <div class="window-title"
+                 id="viewerTitle">
+                🖼 Image Viewer
+            </div>
+
+            <div class="window-controls">
+
+                <button class="win-btn minimize">—</button>
+                <button class="win-btn maximize">□</button>
+                <button class="win-btn close">×</button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content"
+             style="padding:10px;">
+
+            <div class="viewer-image"
+                 id="viewerImage">
+
+                <div class="viewer-placeholder">
+                    MEMORY PHOTO ♡
+                </div>
+
+            </div>
+
+            <div class="viewer-caption"
+                 id="viewerCaption">
+                memory ♡
+            </div>
+
+        </div>
+
+        <div class="statusbar">
+            September Image Viewer
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         TASKBAR
+    ================================================== -->
+
+    <div class="taskbar">
+
+        <button class="start-button"
+                id="startButton">
+
+            ♡
+            <span class="start-text">
+                Start
+            </span>
+
+        </button>
+
+        <div class="task-divider"></div>
+
+        <div class="task-items"
+             id="taskItems">
+        </div>
+
+        <div class="clock"
+             id="clock">
+        </div>
+
+    </div>
+
+
+    <!-- START MENU -->
+
+    <div class="start-menu"
+         id="startMenu">
+
+        <div class="start-head">
+
+            <div class="avatar">
+                ♡
+            </div>
+
+            <div>
+                <b>
+                    September OS
+                </b>
+
+                <small>
+                    memory archive
+                </small>
+            </div>
+
+        </div>
+
+        <div class="start-apps">
+
+            <button class="start-app"
+                    data-open="genting">
+                <span class="mini">🏔️</span>
+                Genting Trip
+            </button>
+
+            <button class="start-app"
+                    data-open="birthday">
+                <span class="mini">🎂</span>
+                Danu's Birthday
+            </button>
+
+            <button class="start-app"
+                    data-open="camera">
+                <span class="mini">📷</span>
+                Camera Roll
+            </button>
+
+            <button class="start-app"
+                    data-open="letters">
+                <span class="mini">💌</span>
+                Letters
+            </button>
+
+            <button class="start-app"
+                    data-open="playlist">
+                <span class="mini">💿</span>
+                Playlist
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     POPUP
+===================================================== -->
+
+<div class="popup"
+     id="popup">
+
+    <div class="popup-bar">
+        September OS
+    </div>
+
+    <div class="popup-body">
+
+        <div class="emoji"
+             id="popupEmoji">
+            ♡
+        </div>
+
+        <p id="popupText">
+            Memory found.
+        </p>
+
+        <button class="toolbar-btn"
+                onclick="closePopup()">
+            OK ♡
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   BOOT
+========================================================= */
+
+const boot = document.getElementById("boot");
+const bootStatus = document.getElementById("bootStatus");
+const enterBtn = document.getElementById("enterBtn");
+
+setTimeout(() => {
+    bootStatus.textContent = "memories found ♡";
+}, 900);
+
+setTimeout(() => {
+    bootStatus.textContent = "September OS is ready.";
+    enterBtn.classList.add("show");
+}, 2000);
+
+enterBtn.addEventListener("click", () => {
+    boot.classList.add("hide");
+});
+
+
+/* =========================================================
+   WINDOWS
+========================================================= */
+
+const windows = [...document.querySelectorAll(".window")];
+const taskItems = document.getElementById("taskItems");
+
+let highestZ = 500;
+
+function openWindow(id){
+
+    const win = document.getElementById(id);
+
+    if(!win) return;
+
+    win.classList.add("open");
+
+    focusWindow(win);
+
+    createTask(win);
+
+    startMenu.classList.remove("show");
+}
+
+function closeWindow(win){
+
+    win.classList.remove("open");
+    win.classList.remove("focused");
+
+    const task =
+        document.querySelector(
+            `.task-item[data-window="${win.id}"]`
+        );
+
+    if(task){
+        task.remove();
+    }
+}
+
+function minimizeWindow(win){
+
+    win.classList.remove("open");
+
+    const task =
+        document.querySelector(
+            `.task-item[data-window="${win.id}"]`
+        );
+
+    if(task){
+        task.classList.remove("active");
+    }
+}
+
+function focusWindow(win){
+
+    highestZ++;
+
+    windows.forEach(w => {
+        w.classList.remove("focused");
+    });
+
+    win.classList.add("focused");
+    win.style.zIndex = highestZ;
+
+    document
+        .querySelectorAll(".task-item")
+        .forEach(t => t.classList.remove("active"));
+
+    const task =
+        document.querySelector(
+            `.task-item[data-window="${win.id}"]`
+        );
+
+    if(task){
+        task.classList.add("active");
+    }
+}
+
+function createTask(win){
+
+    let task =
+        document.querySelector(
+            `.task-item[data-window="${win.id}"]`
+        );
+
+    if(task) return;
+
+    task = document.createElement("button");
+
+    task.className = "task-item active";
+
+    task.dataset.window = win.id;
+
+    task.textContent =
+        win.querySelector(".window-title")
+        ?.textContent.trim() || win.id;
+
+    task.addEventListener("click", () => {
+
+        if(win.classList.contains("open")){
+
+            if(win.classList.contains("focused")){
+                minimizeWindow(win);
+            }else{
+                focusWindow(win);
+            }
+
+        }else{
+
+            win.classList.add("open");
+            focusWindow(win);
+        }
+
+    });
+
+    taskItems.appendChild(task);
+}
+
+
+/* =========================================================
+   OPEN BUTTONS
+========================================================= */
+
+document.addEventListener("click", e => {
+
+    const opener = e.target.closest("[data-open]");
+
+    if(opener){
+        openWindow(opener.dataset.open);
+    }
+
+});
+
+
+/* =========================================================
+   WINDOW BUTTONS
+========================================================= */
+
+windows.forEach(win => {
+
+    win.addEventListener("pointerdown", () => {
+        focusWindow(win);
+    });
+
+    const close =
+        win.querySelector(".close");
+
+    const minimize =
+        win.querySelector(".minimize");
+
+    const maximize =
+        win.querySelector(".maximize");
+
+    if(close){
+        close.addEventListener("click", e => {
+            e.stopPropagation();
+            closeWindow(win);
+        });
+    }
+
+    if(minimize){
+        minimize.addEventListener("click", e => {
+            e.stopPropagation();
+            minimizeWindow(win);
+        });
+    }
+
+    if(maximize){
+        maximize.addEventListener("click", e => {
+
+            e.stopPropagation();
+
+            if(window.innerWidth <= 700){
+                return;
+            }
+
+            win.classList.toggle("maxed");
+
+            if(win.classList.contains("maxed")){
+
+                win.dataset.oldLeft = win.style.left;
+                win.dataset.oldTop = win.style.top;
+                win.dataset.oldWidth = win.style.width;
+                win.dataset.oldHeight = win.style.height;
+
+                win.style.left = "12px";
+                win.style.top = "12px";
+                win.style.width = "calc(100vw - 24px)";
+                win.style.height = "calc(100vh - 72px)";
+
+            }else{
+
+                win.style.left =
+                    win.dataset.oldLeft || "20%";
+
+                win.style.top =
+                    win.dataset.oldTop || "10%";
+
+                win.style.width =
+                    win.dataset.oldWidth || "";
+
+                win.style.height =
+                    win.dataset.oldHeight || "";
+            }
+
+        });
+    }
+
+});
+
+
+/* =========================================================
+   DRAG WINDOWS
+========================================================= */
+
+windows.forEach(win => {
+
+    const bar = win.querySelector(".titlebar");
+
+    let dragging = false;
+    let startX = 0;
+    let startY = 0;
+    let originalX = 0;
+    let originalY = 0;
+
+    bar.addEventListener("pointerdown", e => {
+
+        if(window.innerWidth <= 700) return;
+
+        if(e.target.closest("button")) return;
+
+        if(win.classList.contains("maxed")) return;
+
+        dragging = true;
+
+        focusWindow(win);
+
+        const rect = win.getBoundingClientRect();
+
+        startX = e.clientX;
+        startY = e.clientY;
+
+        originalX = rect.left;
+        originalY = rect.top;
+
+        bar.setPointerCapture(e.pointerId);
+    });
+
+    bar.addEventListener("pointermove", e => {
+
+        if(!dragging) return;
+
+        let newX =
+            originalX + (e.clientX - startX);
+
+        let newY =
+            originalY + (e.clientY - startY);
+
+        const maxX =
+            window.innerWidth - win.offsetWidth;
+
+        const maxY =
+            window.innerHeight - 55;
+
+        newX = Math.max(
+            0,
+            Math.min(newX,maxX)
+        );
+
+        newY = Math.max(
+            0,
+            Math.min(newY,maxY)
+        );
+
+        win.style.left = newX + "px";
+        win.style.top = newY + "px";
+    });
+
+    bar.addEventListener("pointerup", () => {
+        dragging = false;
+    });
+
+    bar.addEventListener("pointercancel", () => {
+        dragging = false;
+    });
+
+});
+
+
+/* =========================================================
+   START MENU
+========================================================= */
+
+const startButton =
+    document.getElementById("startButton");
+
+const startMenu =
+    document.getElementById("startMenu");
+
+startButton.addEventListener("click", e => {
+
+    e.stopPropagation();
+
+    startMenu.classList.toggle("show");
+});
+
+document.addEventListener("click", e => {
+
+    if(
+        !startMenu.contains(e.target) &&
+        !startButton.contains(e.target)
+    ){
+        startMenu.classList.remove("show");
+    }
+
+});
+
+
+/* =========================================================
+   CLOCK
+========================================================= */
+
+const clock =
+    document.getElementById("clock");
+
+function updateClock(){
+
+    const now = new Date();
+
+    const time =
+        now.toLocaleTimeString(
+            [],
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        );
+
+    const date =
+        now.toLocaleDateString(
+            [],
+            {
+                day:"2-digit",
+                month:"2-digit",
+                year:"numeric"
+            }
+        );
+
+    clock.innerHTML =
+        `${time}<br>${date}`;
+}
+
+updateClock();
+
+setInterval(updateClock,30000);
+
+
+/* =========================================================
+   PHOTO VIEWER
+========================================================= */
+
+const viewerTitle =
+    document.getElementById("viewerTitle");
+
+const viewerImage =
+    document.getElementById("viewerImage");
+
+const viewerCaption =
+    document.getElementById("viewerCaption");
+
+document
+.querySelectorAll(".photo-card[data-photo]")
+.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        viewerTitle.textContent =
+            "🖼 " + card.dataset.photo;
+
+        viewerCaption.textContent =
+            card.dataset.caption || "♡";
+
+        const img =
+            card.querySelector("img");
+
+        if(img){
+
+            viewerImage.innerHTML =
+                `<img src="${img.src}" alt="">`;
+
+        }else{
+
+            viewerImage.innerHTML =
+                `<div class="viewer-placeholder">
+                    ${card.dataset.photo}<br>♡
+                 </div>`;
+        }
+
+        openWindow("photoViewer");
+    });
+
+});
+
+
+/* =========================================================
+   ASLYNE REVEAL
+========================================================= */
+
+function revealAslyne(){
+
+    const mystery =
+        document.getElementById("mystery");
+
+    const name =
+        document.getElementById("revealName");
+
+    mystery.classList.add("revealed");
+
+    mystery.textContent = "💗";
+
+    name.classList.add("show");
+
+    const aslyneStatus =
+        document.querySelector(
+            "#aslyne .statusbar"
+        );
+
+    if(aslyneStatus){
+        aslyneStatus.textContent =
+            "identity confirmed: ASLYNE ♡";
+    }
+}
+
+
+/* =========================================================
+   POPUPS
+========================================================= */
+
+const popup =
+    document.getElementById("popup");
+
+const popupText =
+    document.getElementById("popupText");
+
+const popupEmoji =
+    document.getElementById("popupEmoji");
+
+function showPopup(type){
+
+    if(type === "chaos"){
+
+        popupEmoji.textContent = "😭";
+
+        popupText.innerHTML =
+            "chaos.exe has successfully loaded.<br><br>" +
+            "Unfortunately, there is too much chaos to display.";
+
+    }else if(type === "blurry"){
+
+        popupEmoji.textContent = "📷";
+
+        popupText.innerHTML =
+            "These photos may be blurry,<br>" +
+            "but they're emotionally important. ♡";
+    }
+
+    popup.classList.add("show");
+}
+
+function giftPopup(number){
+
+    popupEmoji.textContent = "🎁";
+
+    popupText.innerHTML =
+        `<b>Gift ${number}</b><br><br>` +
+        `From: ______<br>` +
+        `Gift: ______<br><br>` +
+        `Danu's reaction: ______ ♡`;
+
+    popup.classList.add("show");
+}
+
+function closePopup(){
+    popup.classList.remove("show");
+}
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+document.addEventListener("keydown", e => {
+
+    if(e.key === "Escape"){
+
+        closePopup();
+
+        const focused =
+            document.querySelector(
+                ".window.focused.open"
+            );
+
+        if(focused){
+            closeWindow(focused);
+        }
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE ORIENTATION / RESIZE
+========================================================= */
+
+window.addEventListener("resize", () => {
+
+    if(window.innerWidth <= 700){
+
+        windows.forEach(win => {
+            win.classList.remove("maxed");
+        });
+
+    }
+
+});
+</script>
+
+</body>
+</html>
